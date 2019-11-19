@@ -16,10 +16,13 @@ class MainComponent extends React.Component {
             <JumboComponent />
             
                 <Row>
-                    <Col sm="6" md="3">
+                    
                         { books.map((book, index) => 
-                            <BooksComponent stack={book} key={index} />)}
-                    </Col>
+                            <Col md="4">
+                            <BooksComponent stack={book} key={index} /> 
+                            </Col>
+                            )}
+                    
                 </Row>
             <Row>
             <FooterComponent />
