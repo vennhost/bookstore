@@ -20,7 +20,7 @@ class BooksComponent extends React.Component {
                 <CardImg top width="100%" object src={ this.props.stack.img } alt="Book Image" />
                 <CardBody>
                 <CardTitle>{ this.props.stack.title } </CardTitle>
-                <CardSubtitle><MyBadge title={ this.props.stack.price } color="danger" text="HOT!!!"></MyBadge></CardSubtitle>
+                <CardSubtitle><MyBadge title={ this.props.stack.price }  text="HOT!!!"></MyBadge></CardSubtitle>
                 <CardText>{ (this.props.stack.category).toUpperCase() }</CardText>
                 <Button>Buy Now</Button>
                 </CardBody>
