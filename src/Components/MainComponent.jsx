@@ -36,11 +36,11 @@ class MainComponent extends React.Component {
             <Input type="text" placeholder="Search for Books" onChange={this.filterBooks} value={this.state.filterWord} className="mb-5" />
             
                 <Row className="books-wrap">
-
-                    { books.filter(stack => stack.title.toLowerCase().include(this.state.filterWord))
-                            .map((book, index) => 
-                            <Col md="4">
-                            <BooksComponent stack={book} key={index} onTheBook={this.clickBook}/> 
+                    
+                    { books.filter(stack => stack.title.toLowerCase().includes(this.state.filterWord))
+                           .map((book, index) => 
+                            <Col md="4" key={index} >
+                            <BooksComponent stack={book} onTheBook={this.clickBook}/> 
                             </Col>
                     )}
                     
