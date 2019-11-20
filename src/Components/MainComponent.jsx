@@ -21,7 +21,7 @@ class MainComponent extends React.Component {
 
         filterBooks = (e) => {
             this.setState({
-                filterWord: e.target.value.toLowerCase
+                filterWord: e.target.value.toLowerCase()
             })
         }
 
