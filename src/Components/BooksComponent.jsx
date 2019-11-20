@@ -8,6 +8,7 @@ import { Card,
     Button
     
 } from "reactstrap"
+import MyBadge from './MyBadge';
 
 class BooksComponent extends React.Component {
     state = {  }
@@ -18,8 +19,8 @@ class BooksComponent extends React.Component {
             <Card onClick={()=> this.props.onTheBook(this.props.stack)}>
                 <CardImg top width="100%" object src={ this.props.stack.img } alt="Book Image" />
                 <CardBody>
-                <CardTitle>{ this.props.stack.title }</CardTitle>
-                <CardSubtitle>${ this.props.stack.price }</CardSubtitle>
+                <CardTitle>{ this.props.stack.title } </CardTitle>
+                <CardSubtitle><MyBadge title={ this.props.stack.price } color="danger" text="HOT!!!"></MyBadge></CardSubtitle>
                 <CardText>{ (this.props.stack.category).toUpperCase() }</CardText>
                 <Button>Buy Now</Button>
                 </CardBody>
