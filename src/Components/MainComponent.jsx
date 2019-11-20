@@ -10,6 +10,7 @@ import SingleBook from './SingleBook'
 class MainComponent extends React.Component {
     state = { 
         theBook: undefined,
+        filterWord: ""
         
      }
 
@@ -36,13 +37,12 @@ class MainComponent extends React.Component {
             
                 <Row className="books-wrap">
 
-                   
-                    
-                        { books.map((book, index) => 
+                    { books.filter(stack => stack.title.toLowerCase().include(this.state.filterWord))
+                            .map((book, index) => 
                             <Col md="4">
                             <BooksComponent stack={book} key={index} onTheBook={this.clickBook}/> 
                             </Col>
-                            )}
+                    )}
                     
                 </Row>
                 

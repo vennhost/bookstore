@@ -5,9 +5,7 @@ class BookList extends React.Component {
     state = {  }
     render() { 
 
-        let stackList = this.props.ListedBook
-
-        console.log(stackList)
+        
 
         return ( 
         <ul>
