@@ -56,7 +56,7 @@ class MainComponent extends React.Component {
     }
 
     componentDidMount = async () => {
-        let res = await fetch("https://venn-bookstore.herokuapp.com")
+        let res = await fetch("https://venn-bookstore.herokuapp.com/books")
         let books = await res.json() 
 
         this.setState({
