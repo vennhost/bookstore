@@ -3,14 +3,15 @@ import {  Container, Row, Col, Input } from "reactstrap"
 import NavComponent from './NavComponent';
 import FooterComponent from './FooterComponent';
 import JumboComponent from './JumboComponent';
-import books from "../data/romance.json";
+//import books from "../data/romance.json";
 import BooksComponent from './BooksComponent';
 import SingleBook from './SingleBook'
 
 class MainComponent extends React.Component {
     state = { 
         theBook: undefined,
-        filterWord: ""
+        filterWord: "", 
+        books: []
         
      }
 
@@ -37,7 +38,7 @@ class MainComponent extends React.Component {
             
                 <Row className="books-wrap">
 
-                    { books.filter(stack => stack.title.toLowerCase().include(this.state.filterWord))
+                    { this.state.books && this.state.books/* .filter(stack => stack.title.toLowerCase().includes(this.state.filterWord)) */
                             .map((book, index) => 
                             <Col md="4">
                             <BooksComponent stack={book} key={index} onTheBook={this.clickBook}/> 
@@ -53,6 +54,18 @@ class MainComponent extends React.Component {
         </Container>
          );
     }
+
+    componentDidMount = async () => {
+        let res = await fetch("https://venn-bookstore.herokuapp.com")
+        let books = await res.json() 
+
+        this.setState({
+            books: books
+        })
+    }
+
+    
+
 }
  
 export default MainComponent;

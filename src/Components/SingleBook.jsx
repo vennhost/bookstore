@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardBody, CardTitle, CardImg, CardText } from 'reactstrap';
+import PostComment from './PostComment'
 /* import BookList from './BookList' */
 
 
@@ -24,6 +25,7 @@ class SingleBook extends React.Component {
                 
                 </CardBody>
             </Card>
+            <PostComment />
 
         
         

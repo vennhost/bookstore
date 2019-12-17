@@ -20,7 +20,7 @@ class BooksComponent extends React.Component {
                 <CardBody>
                 <CardTitle>{ this.props.stack.title }</CardTitle>
                 <CardSubtitle>${ this.props.stack.price }</CardSubtitle>
-                <CardText>{ (this.props.stack.category).toUpperCase() }</CardText>
+                <CardText></CardText>
                 <Button>Buy Now</Button>
                 </CardBody>
             </Card>

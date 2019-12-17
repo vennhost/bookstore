@@ -2,16 +2,16 @@ import React from 'react';
 import {} from 'reactstrap'
 
 class BookList extends React.Component {
-    state = {  }
+    state = {}
     render() { 
 
         
 
         return ( 
         <ul>
-            {stackList.map((title, y) => 
-                <li key={y}>
-                    {stackList.title} | {(stackList.category).toSentenceCase}
+           
+                <li>
+                   {this.props.stack.title} 
                 </li>
             )}
         </ul>
